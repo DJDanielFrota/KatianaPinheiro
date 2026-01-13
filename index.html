@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -8,68 +8,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta property="og:title" content="Katiana Pinheiro - Corretora de Imóveis">
     <meta property="og:description" content="Encontre seu futuro lar. Confira os melhores imóveis em destaque.">
-    <meta property="og:image" content="https://DJDanielFrota.github.io/KatianaPinheiro/AP%2001.jpg">
-    <meta property="og:url" content="https://DJDanielFrota.github.io/KatianaPinheiro/">
+    <meta property="og:image" content="https://github.com/DJDanielFrota/KatianaPinheiro/blob/main/Logo%2003.jpg">
+    <meta property="og:url" content="https://katianapinheiro.com.br/">
     <meta property="og:type" content="website">
 
     
     <style>
         /* Configurações Gerais */
+        /* Configurações Gerais */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f4f9; color: #333; line-height: 1.6; overflow-x: hidden; }
+        
+        :root {
+            --primary-dark: #1a2a3a;    /* Azul Elegante */
+            --accent-gold: #c5a059;     /* Dourado Soft */
+            --accent-green: #25d366;    /* Verde WhatsApp */
+            --bg-light: #fdfdfd;        /* Branco levemente quente */
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --card-border: #e9ecef;
+        }
+
+        body { background-color: #f8f9fa; color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
         /* Cabeçalho Responsivo */
         header {
-            background-color: #2c3e50;
+            background-color: var(--primary-dark);
             color: white;
-            padding: 1rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
-            flex-wrap: wrap; /* Permite que os itens quebrem linha no celular */
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 3px solid var(--accent-gold);
         }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-area img { width: 60px; height: auto; border-radius: 5px; border: 1px solid var(--accent-gold); }
+        .brand-text h1 { font-size: 1.2rem; letter-spacing: 1px; color: var(--accent-gold); }
+        .brand-text p { font-size: 0.8rem; opacity: 0.9; text-transform: uppercase; }
 
-        .logo-area img {
-            width: 60px; /* Reduzi um pouco para telas menores */
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .brand-text h1 { font-size: 1.1rem; }
-        .brand-text p { font-size: 0.8rem; opacity: 0.8; }
-
-        /* Contato Nav Responsivo */
-        .contato-nav {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-        }
-
-        .icon-link {
-            text-decoration: none;
-            font-size: 1.4rem;
-            transition: transform 0.2s;
-        }
-
-        .icon-link:hover { transform: scale(1.2); }
-
-        .fa-phone { color: #007bff; }
-        .fa-whatsapp { color: #25d366; }
-        .fa-instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* Contato Nav */
+        .contato-nav { display: flex; align-items: center; gap: 15px; font-size: 0.9rem; }
+        .icon-link { text-decoration: none; font-size: 1.4rem; transition: all 0.3s; color: white; }
+        .icon-link:hover { transform: translateY(-3px); color: var(--accent-gold); }
+        
+        .fa-phone { color: white; }
+        .fa-whatsapp { color: var(--accent-green); }
+        .fa-instagram { color: #E1306C; }
 
         /* Container e Grid */
         .container { width: 92%; max-width: 1200px; margin: 2rem auto; }
@@ -112,31 +99,109 @@
         .price { color: #27ae60; font-size: 1.3rem; font-weight: bold; }
         .details { font-size: 0.85rem; color: #666; margin: 10px 0; }
 
-        .btn-whatsapp {
-            display: block;
-            background-color: #25d366;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            border: none;
+        /*NOVO LAYOUT DOS BOTÕES*/
+        /* O seu botão de WhatsApp */
+       .btn-whatsapp {
             width: 100%;
+            background-color: var(--primary-dark);
+            color: white;
+            border: 1px solid var(--accent-gold);
+            padding: 12px;
             cursor: pointer;
+            font-weight: 600;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        /* Formulário Responsivo */
-        .contato {
-            background: #fff;
-            padding: 1.5rem;
-            margin-top: 3rem;
-            border-radius: 8px;
+        .btn-whatsapp:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
         }
-        form { display: grid; gap: 1rem; max-width: 600px; margin: 0 auto; }
-        input, textarea, button[type="submit"] { padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; /* Evita zoom automático no iOS */ }
-        button[type="submit"] { background: #2c3e50; color: white; border: none; cursor: pointer; font-weight: bold; }
+
+        /* NOVO Formulário Responsivo */
+        :root {
+            --primary-color: #25d366; /* Verde WhatsApp */
+            --primary-hover: #128c7e;
+            --text-color: #2c3e50;
+            --bg-input: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        #cadastroForm {
+            max-width: 450px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #2c3e50;
+            border-radius: 16px;
+            border-top: 5px solid var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaçamento entre campos */
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        #cadastroForm input, 
+        #cadastroForm textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: var(--bg-input);
+            color: var(--accent-gold);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+            box-sizing: border-box; /* Garante que o padding não quebre a largura */
+        }
+
+        /* Efeito ao clicar no campo */
+        #cadastroForm input:focus, 
+        #cadastroForm textarea:focus {
+            border-color: var(--accent-gold);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1);
+        }
+
+        #cadastroForm textarea {
+            resize: none; /* Impede o usuário de desconfigurar o layout */
+        }
+
+        #cadastroForm button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        #cadastroForm button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        #cadastroForm button:active {
+            transform: translateY(0);
+        }
+
+        /* Estilização dos Placeholders */
+        ::placeholder {
+            color: #94a3b8;
+        }
+
+                        /*FINALIZA AQUI A ESTILIZAÇÃO DO CCS NO NOVO FORM*/
 
         /* Modal Galeria Ajustado */
         .modal {
@@ -208,7 +273,117 @@
             .nav-btn { font-size: 1.5rem; }
         }
 
-        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.75rem; }
+        /*Novo footer com baner*/
+
+        .footer-container {
+            margin-top: 100px; /* Espaço para o banner flutuar */
+            position: relative;
+            background-color: #1a202c; /* Azul marinho muito escuro */
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* O Banner Elegante */
+        .footer-banner {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            padding: 40px 60px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: -50px; /* Faz o banner subir para fora do rodapé */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .banner-content h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .banner-content p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+
+        .btn-banner {
+            background: white;
+            color: #128c7e;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-banner:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Estrutura do Rodapé Principal */
+        .footer-main {
+            padding: 60px 20px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h3, .footer-col h4 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Responsividade para Celular */
+        @media (max-width: 768px) {
+            .footer-banner {
+                flex-direction: column;
+                text-align: center;
+                margin: 0 20px;
+                top: -40px;
+                padding: 30px;
+            }
+            .btn-banner {
+                margin-top: 20px;
+            }
+        }
 
 
     </style>
@@ -532,8 +707,40 @@
         <button class="nav-btn next" id="nextBtn">&#10095;</button>
     </div>
 
-    <footer>
-        &copy; 2026 Katiana Pinheiro Corretora de Imóveis Creci AM 6978.
+    <!--Call-to-Action (Banner) e o Footer Informativo.-->
+    <footer class="footer-container">
+        <div class="footer-banner">
+            <div class="banner-content">
+                <h2>Pronto para encontrar seu novo lar?</h2>
+                <p>Fale com quem entende do assunto e agende sua visita hoje mesmo.</p>
+            </div>
+            <a href="#cadastroForm" class="btn-banner">Começar Agora</a>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Katiana Pinheiro Corretora</h3>
+                    <p>Transformando sonhos em endereços.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Imóveis</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>katia.medanha@gmail.com</p>
+                    <p>(92) 99422-2511</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Katiana Pinheiro Creci AM/6978 - Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
